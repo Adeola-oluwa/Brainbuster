@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient( #ff6b6b, #ffd166, #06d6a0, #118ab2);
+  font-family: "poppins";
+}
