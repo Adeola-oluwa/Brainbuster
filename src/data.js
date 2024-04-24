@@ -21,7 +21,7 @@ export const data = [
   {
     question: "What does the HTML <!DOCTYPE> declaration define?",
     option1: "The document type to be linked",
-    option2: "What does the HTML <!DOCTYPE> declaration define?",
+    option2: "The contains the meta informations?",
     option3: "It helps to display the web-page on the screen",
     option4: "It defines the version of HTML used in the document",
     ans: 4,
@@ -96,12 +96,13 @@ export const data = [
     ans: 3,
   },
   {
-    question: "Which HTML element is used to define color in CSS?",
-    option1: "<color>",
-    option2: "<style>",
-    option3: "<RBG>",
-    option4: "<hex>",
-    ans: 1,
+    question:
+      "Which HTML element is appropriate for marking up a piece of text that should be emphasized, but not necessarily bold?",
+    option1: "<strong>",
+    option2: "<em>",
+    option3: "<mark>",
+    option4: "<b>",
+    ans: 2,
   },
   {
     question: "What is the purpose of the HTML <meta> tag?",
@@ -126,7 +127,7 @@ export const data = [
     option2: "url",
     option3: "alt",
     option4: "img",
-    ans: 2,
+    ans: 1,
   },
   {
     question: "What is the purpose of HTML comments",
@@ -138,9 +139,8 @@ export const data = [
     ans: 3,
   },
   {
-    question:
-      "Which of the following methods is commonly used to specify colors in CSS?",
-    option1: "Using color names like 'red'or 'blue'",
+    question: "In HTML and CSS, what is the purpose of the class attribute?",
+    option1: "To uniquely identify an HTML element",
     option2: "To provide additional information about the element's content",
     option3:
       "To specify a name for a group of elements that share common styles",
