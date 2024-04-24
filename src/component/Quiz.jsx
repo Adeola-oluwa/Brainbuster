@@ -77,10 +77,10 @@ const Quiz = () => {
   return (
     <>
       <div className="instructions">
-        <h3 className="centered emphasized">
+        <p className="centered emphasized">
           Please read the questions carefully before selecting your answer. Once
           selected, your answer cannot be changed.
-        </h3>
+        </p>
       </div>
       <div className="timer-container">
         Time Left: {minutes < 10 ? `0${minutes}` : minutes}:

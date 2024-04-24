@@ -79,12 +79,12 @@ body {
 
 .centered {
   text-align: center;
-  margin:30px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .emphasized {
   font-weight: bold;
+  color: #fff;
 }
 
 
