@@ -8,7 +8,7 @@ const Quiz = () => {
   const [lock, setLock] = useState(false);
   const [score, setScore] = useState(0);
   const [result, setResult] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(900); // 15 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(900);
 
   const option1 = useRef(null);
   const option2 = useRef(null);
@@ -19,7 +19,15 @@ const Quiz = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prevTime) => prevTime - 1);
+      setTimeLeft((prevTime) => {
+        if (prevTime === 0) {
+          clearInterval(timer);
+          setResult(true);
+          return 0;
+        } else {
+          return prevTime - 1;
+        }
+      });
     }, 1000);
 
     return () => clearInterval(timer);
@@ -59,7 +67,23 @@ const Quiz = () => {
         option.current.classList.remove("correct");
       });
     }
+    if (data[index + 1].answered) {
+      setQuestion(data[index + 1]);
+      setLock(false); // Lock the question if it has been answered
+    }
   };
+
+  // const prev = () => {
+  //   if (index > 0) {
+  //     setIndex((prevIndex) => prevIndex - 1);
+  //     setQuestion(data[index - 1]);
+  //     setLock(true);
+  //     // option_array.forEach((option) => {
+  //     //   option.current.classList.remove("wrong");
+  //     //   option.current.classList.remove("correct");
+  //     // });
+  //   }
+  // };
 
   const reset = () => {
     setIndex(0);
@@ -67,7 +91,7 @@ const Quiz = () => {
     setScore(0);
     setLock(false);
     setResult(false);
-    setTimeLeft(900); // Reset timer to 15 minutes
+    setTimeLeft(900);
   };
 
   // Convert remaining time to minutes and seconds
@@ -78,8 +102,10 @@ const Quiz = () => {
     <>
       <div className="instructions">
         <p className="centered emphasized">
-          Please read the questions carefully before selecting your answer. Once
-          selected, your answer cannot be changed.
+          Please read each question carefully to ensure understanding. Feel free
+          to refer to W3Schools if necessary. Be mindful of your time as you
+          progress through the assessment. Remember, the purpose of this
+          assessment is to ensure your understanding of HTML link concepts.
         </p>
       </div>
       <div className="timer-container">
@@ -87,7 +113,6 @@ const Quiz = () => {
         {seconds < 10 ? `0${seconds}` : seconds}
       </div>
       <div className="container">
-        {/* <h1>Quiz App</h1> */}
         {result ? (
           <>
             <h2>
@@ -114,7 +139,12 @@ const Quiz = () => {
                 {question.option4}
               </li>
             </ul>
-            <button onClick={next}>Next</button>
+            <div>
+              {/* <button onClick={prev} disabled={index === 0}>
+                Previous
+              </button> */}
+              <button onClick={next}>Next</button>
+            </div>
             <div className="index">
               {index + 1} of {data.length} questions
             </div>

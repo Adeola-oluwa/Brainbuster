@@ -71,15 +71,18 @@ body {
 }
 
 .timer-container {
-  position: fixed;
-  top: 10px; /* Adjust as needed */
+  position:absolute;
+  top: 50px; /* Adjust as needed */
   right: 10px; /* Adjust as needed */
   font-size: 18px;
+  font-weight: bolder;
 }
 
 .centered {
   text-align: center;
   font-size: 20px;
+  font-size:1rem;
+  margin: 10px;
   /* letter-spacing: normal; */
 }
 
