@@ -71,7 +71,7 @@ body {
 }
 
 .timer-container {
-  position:absolute;
+  position:fixed;
   top: 50px; /* Adjust as needed */
   right: 10px; /* Adjust as needed */
   font-size: 18px;
