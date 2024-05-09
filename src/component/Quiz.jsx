@@ -73,18 +73,6 @@ const Quiz = () => {
     }
   };
 
-  // const prev = () => {
-  //   if (index > 0) {
-  //     setIndex((prevIndex) => prevIndex - 1);
-  //     setQuestion(data[index - 1]);
-  //     setLock(true);
-  //     // option_array.forEach((option) => {
-  //     //   option.current.classList.remove("wrong");
-  //     //   option.current.classList.remove("correct");
-  //     // });
-  //   }
-  // };
-
   const reset = () => {
     setIndex(0);
     setQuestion(data[0]);
@@ -95,8 +83,8 @@ const Quiz = () => {
   };
 
   // Convert remaining time to minutes and seconds
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
+  // const minutes = Math.floor(timeLeft / 60);
+  // const seconds = timeLeft % 60;
 
   return (
     <>
@@ -108,10 +96,10 @@ const Quiz = () => {
           assessment is to ensure your understanding of HTML link concepts.
         </p>
       </div>
-      <div className="timer-container">
+      {/* <div className="timer-container">
         Time Left: {minutes < 10 ? `0${minutes}` : minutes}:
         {seconds < 10 ? `0${seconds}` : seconds}
-      </div>
+      </div> */}
       <div className="container">
         {result ? (
           <>
@@ -140,7 +128,7 @@ const Quiz = () => {
               </li>
             </ul>
             <div>
-              {/* <button onClick={prev} disabled={index === 0}>
+              {/* <button onClick={prev} >
                 Previous
               </button> */}
               <button onClick={next}>Next</button>

@@ -41,6 +41,7 @@ body {
   font-size: 1.6rem;
   cursor: pointer;
 }
+w
 
 .container button {
   width: 20%;
@@ -49,6 +50,9 @@ body {
   background: #553f9a;
   color: #fff;
   font-size: 2rem;
+  align-items:center;
+  display: flex;
+  justify-content: center;
   font-weight: 500;
   border: none;
   border-radius: 4px;
